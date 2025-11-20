@@ -19,4 +19,7 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Large CSV data files
+*.csv
+
 
