@@ -16,7 +16,10 @@
         <nav>
             <a href="#introduction">Introduction</a>
             <a href="#data">Data</a>
-            <a href="#visualizations">Visualizations</a>
+            <div class="nav-tabs">
+                <button class="tab-button active" onclick="showTab('altair', event)">Altair Visualizations</button>
+                <button class="tab-button" onclick="showTab('d3', event)">D3 Visualizations</button>
+            </div>
             <a href="#summary">Summary</a>
             <a href="#references">References</a>
         </nav>
@@ -51,43 +54,62 @@
         <section id="visualizations">
             <h2>Visualizations</h2>
             
-            <div class="viz-container">
-                <h3>ROI vs Budget by Genre</h3>
-                <iframe src="viz_exports/roi_budget_chart.html" class="chart-iframe"></iframe>
-                <div class="takeaway">
-                    <strong>Takeaway:</strong> Takeaway based on the chart goes here.
+        
+            <div id="altair-tab" class="tab-content active">
+                <div class="viz-container">
+                    <h3>ROI vs Budget by Genre</h3>
+                    <iframe src="viz_exports/roi_budget_chart.html" class="chart-iframe"></iframe>
+                    <div class="takeaway">
+                        <strong>Takeaway:</strong> Takeaway based on the chart goes here.
+                    </div>
+                </div>
+
+                <div class="viz-container">
+                    <h3>Genre Success by Release Month</h3>
+                    <img src="viz_exports/genre_month_heatmap.png" alt="Genre by Release Month Heatmap" class="static-image">
+                    <div class="takeaway">
+                        <strong>Takeaway:</strong> Takeaway based on the chart goes here.   
+                    </div>
+                </div>
+
+                <div class="viz-container">
+                    <h3>Budget vs Average Rating</h3>
+                    <iframe src="viz_exports/budget_rating_chart.html" class="chart-iframe"></iframe>
+                    <div class="takeaway">
+                        <strong>Takeaway:</strong> Takeaway based on the chart goes here.
+                    </div>
+                </div>
+
+                <div class="viz-container">
+                    <h3>Top 25 Most Voted Movies</h3>
+                    <iframe src="viz_exports/top25_voted_chart.html" class="chart-iframe"></iframe>
+                    <div class="takeaway">
+                        <strong>Takeaway:</strong> This visualization shows that the most-voted movies in each genre cluster within a narrow rating band, usually between 6 and 8 stars. Vote counts indicate popularity and audience reach but do not guarantee higher ratings. Some genres have top-voted films with consistently strong ratings, while others show more variability. The drop-down filter clarifies how each genre’s most popular titles perform, helping you quickly see which genres reliably produce high-rated movies and which show more fluctuation in audience reception.
+                    </div>
+                </div>
+
+                <div class="viz-container">
+                    <h3>Global Movie Revenue Explorer</h3>
+                    <iframe src="viz_exports/global_revenue_map.html" class="chart-iframe"></iframe>
+                    <div class="takeaway">
+                        <strong>Takeaway:</strong> Takeaway based on the chart goes here.
+                    </div>
                 </div>
             </div>
 
-            <div class="viz-container">
-                <h3>Genre Success by Release Month</h3>
-                <img src="viz_exports/genre_month_heatmap.png" alt="Genre by Release Month Heatmap" class="static-image">
-                <div class="takeaway">
-                    <strong>Takeaway:</strong> Takeaway based on the chart goes here.   
-                </div>
-            </div>
-
-            <div class="viz-container">
-                <h3>Budget vs Average Rating</h3>
-                <iframe src="viz_exports/budget_rating_chart.html" class="chart-iframe"></iframe>
-                <div class="takeaway">
-                    <strong>Takeaway:</strong> Takeaway based on the chart goes here.
-                </div>
-            </div>
-
-            <div class="viz-container">
-                <h3>Top 25 Most Voted Movies</h3>
-                <iframe src="viz_exports/top25_voted_chart.html" class="chart-iframe"></iframe>
-                <div class="takeaway">
-                    <strong>Takeaway:</strong> Takeaway based on the chart goes here.
-                </div>
-            </div>
-
-            <div class="viz-container">
-                <h3>Global Movie Revenue Explorer</h3>
-                <iframe src="viz_exports/global_revenue_map.html" class="chart-iframe"></iframe>
-                <div class="takeaway">
-                    <strong>Takeaway:</strong> Takeaway based on the chart goes here.
+            <div id="d3-tab" class="tab-content">
+                <div class="viz-container">
+                    <h3>Movie Genre Trends Over Time</h3>
+                    <p>Interactive D3.js visualization showing genre trends from 1990 to 2017.</p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <a href="d3_movegenre.html" target="_blank" class="d3-link-button">
+                            Open D3 Genre Trends Visualization →
+                        </a>
+                    </div>
+                    <div class="takeaway">
+                        <strong>About:</strong> This interactive chart displays the number of movies released per genre each year. 
+                        Click on genre names in the legend to show/hide lines. Hover over the chart to see exact values.
+                    </div>
                 </div>
             </div>
         </section>
@@ -125,5 +147,32 @@
             <p>Movie Box Office Success - TMDB 5000 Analysis | Created by Harrison, Janina, Hailey, and Chloe</p>
         </footer>
     </div>
+
+    <script>
+        function showTab(tabName, event) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected tab
+            const selectedTab = document.getElementById(tabName + '-tab');
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+
+            // Add active class to clicked button
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>

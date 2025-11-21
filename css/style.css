@@ -190,3 +190,78 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+
+.nav-tabs {
+    display: inline-flex;
+    gap: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.tab-button {
+    background-color: #ffffff;
+    color: #3498db;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+    border-right: 1px solid #e0e0e0;
+    font-family: inherit;
+}
+
+.tab-button:last-child {
+    border-right: none;
+}
+
+.tab-button:hover {
+    background-color: #ecf0f1;
+}
+
+.tab-button.active {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+.tab-button.active:hover {
+    background-color: #2980b9;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.d3-link-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.d3-link-button:hover {
+    background-color: #2980b9;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .nav-tabs {
+        margin: 10px 0;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .tab-button {
+        flex: 1;
+        text-align: center;
+    }
+}
