@@ -40,7 +40,7 @@ for _, row in df.iterrows():
             })
         links.append({"source": movie_id, "target": gid})
 
-    for c in companies[:2]:  # limit companies per movie
+    for c in companies[:2]:
         cid = f"company_{c['id']}"
         if cid not in cset:
             cset[cid] = True
