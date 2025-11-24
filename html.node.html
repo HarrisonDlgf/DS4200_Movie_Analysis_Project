@@ -41,8 +41,8 @@ d3.json("network.json").then(data => {
       .style("position", "absolute")
       .style("background", "white")
       .style("border", "1px solid #595959")
-      .style("padding", "8px")
-      .style("border-radius", "5px");
+      .style("padding", "6px")
+      .style("border-radius", "4px");
 
   const simulation = d3.forceSimulation(data.nodes)
   .force("link", d3.forceLink(data.links)
