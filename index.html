@@ -27,7 +27,7 @@
         <section id="introduction">
             <h2>Introduction</h2>
             <p>
-                Intro goes here.
+                The box office for cinemas brings in hundreds of millions of dollars of investment before a movie ever reaches audiences. Some fields profit in such large amounts while others crash and burn. This leads to the question, what factors influence a movie’s box office performance? The success of a movie depends on many interconnected factors such as budgets, timing, audience reception and actor popularity. In this project, we explore open data from IMDb and The Movie Database (TMDb) to interact with different variables such as genre, release month, and viewer ratings to explore the financial performance of a film. Through data analysis and visualization, we aim to uncover which factors influence and strongly predict box office success and if certain patterns emerge or consistently outperform others.
             </p>
             <p>
                 Analysis goes here.
@@ -60,7 +60,15 @@
                     <h3>ROI vs Budget by Genre</h3>
                     <iframe src="viz_exports/roi_budget_chart.html" class="chart-iframe"></iframe>
                     <div class="takeaway">
-                        <strong>Takeaway:</strong> Takeaway based on the chart goes here.
+                        <strong>Takeaway:</strong> High budgets don't necessarily guarantee high ROI. Some genres, such as Adventure and Fantasy, have consistently high budgets but low ROI. In other words, even though you spend more, it simply increases the absolute dollars at stake but doesn’t typically explode the ratio. This suggest that ROI is not solely dependent on how much you spend. Also, genres also overlap a lot, there isn't a clear distinction between them. At smaller budgets, we see both flops and runaway successes. 
+                    </div>
+                </div>
+
+                <div class="viz-container">
+                    <h3>ROI vs Rating by Genre</h3>
+                    <iframe src="viz_exports/roi_rating_chart.html" class="chart-iframe"></iframe>
+                    <div class="takeaway">
+                        <strong>Takeaway:</strong> This visualization shows that the most-rated movies in each genre cluster within a narrow rating band, usually between 6 and 8 stars. Vote counts indicate popularity and audience reach but do not guarantee higher ratings. Some genres have top-rated films with consistently strong ratings, while others show more variability. The drop-down filter clarifies how each genre’s most popular titles perform, helping you quickly see which genres reliably produce high-rated movies and which show more fluctuation in audience reception.
                     </div>
                 </div>
 
@@ -150,25 +158,21 @@
 
     <script>
         function showTab(tabName, event) {
-            // Hide all tab contents
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(tab => {
                 tab.classList.remove('active');
             });
 
-            // Remove active class from all buttons
             const tabButtons = document.querySelectorAll('.tab-button');
             tabButtons.forEach(button => {
                 button.classList.remove('active');
             });
 
-            // Show selected tab
             const selectedTab = document.getElementById(tabName + '-tab');
             if (selectedTab) {
                 selectedTab.classList.add('active');
             }
 
-            // Add active class to clicked button
             if (event && event.target) {
                 event.target.classList.add('active');
             }
