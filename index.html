@@ -47,7 +47,7 @@
                 <li><strong>Content information:</strong> Overview, tagline, keywords, and cast/crew data</li>
             </ul>
             <p>
-                After cleaning and preprocessing, what was the result? Insert text here.
+                After cleaning the data, we ended up with 3,379 movies that had complete information we could analyze. We started by fixing the release dates and removing any movies with invalid dates. From these dates, we extracted the month and year so we could look at seasonal patterns. We removed all movies that had zero revenue or missing revenue data since we needed real financial numbers for our analysis. The genres data came in a messy format, so we had to parse it and create separate rows for movies with multiple genres - for example, if a movie was both "Action" and "Adventure," it would appear twice in our data, once for each genre. After cleaning, we found 19 different genres in total: Action, Adventure, Animation, Comedy, Crime, Documentary, Drama, Family, Fantasy, Foreign, History, Horror, Music, Mystery, Romance, Science Fiction, Thriller, War, and Western. This cleaned dataset gave us everything we needed to analyze how different factors affect movie success.
             </p>
         </section>
 
