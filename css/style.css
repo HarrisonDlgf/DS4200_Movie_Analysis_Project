@@ -134,13 +134,31 @@ section a:hover {
 }
 
 .static-image {
-    max-width: 100%;
+    width: 100%;
+    max-width: 1200px;
     height: auto;
     border-radius: 4px;
-    margin: 20px 0;
+    margin: 20px auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.network-container {
+    width: 100%;
+    overflow: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin: 20px 0;
+    max-height: 1000px;
+}
+
+.network-iframe {
+    width: 100%;
+    max-width: 1200px;
+    height: 800px;
+    border: none;
+    display: block;
+    margin: 0 auto;
 }
 
 .takeaway {
@@ -191,51 +209,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.nav-tabs {
-    display: inline-flex;
-    gap: 0;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 0 10px;
-}
-
-.tab-button {
-    background-color: #ffffff;
-    color: #3498db;
-    border: none;
-    padding: 8px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s;
-    border-right: 1px solid #e0e0e0;
-    font-family: inherit;
-}
-
-.tab-button:last-child {
-    border-right: none;
-}
-
-.tab-button:hover {
-    background-color: #ecf0f1;
-}
-
-.tab-button.active {
-    background-color: #3498db;
-    color: #ffffff;
-}
-
-.tab-button.active:hover {
-    background-color: #2980b9;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
 
 .d3-link-button {
     display: inline-block;
@@ -254,14 +227,7 @@ html {
 }
 
 @media (max-width: 768px) {
-    .nav-tabs {
-        margin: 10px 0;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .tab-button {
-        flex: 1;
-        text-align: center;
+    .network-iframe {
+        height: 600px;
     }
 }
